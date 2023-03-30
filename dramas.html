@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" href="./img/log/undraw_netflix_q-00-o.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Top Netflix Horror Movies/TV Shows</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="navBar">
+        <div class="logo">
+          <img src="./img/log/undraw_netflix_q-00-o.svg" alt="" />
+        </div>
+
+        <ul>
+          <li><a href="index.html" class="home">Home</a></li>
+          <li><a href="horror.html" class="horror">Horror</a></li>
+          <li><a href="comedies.html" class="comedies">Comedies</a></li>
+          <li><a href="asians.html" class="asians">Asians</a></li>
+        </ul>
+        <i class="fa fa-bars"></i>
+      </div>
+
+      <div class="content">
+        <h1>Top Netflix TV Shows</h1>
+        <div class="container"></div>
+      </div>
+    </div>
+    <script>
+      const movies = [
+        {
+          name: "Wednesday",
+          img: "https://kaiz.me/flexbox-product-grid/assets/wednesday.jpg",
+          discription: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi
+earum voluptatem nesciunt ullam veniam molestiae? Necessitatibus
+consequuntur ipsam consectetur atque quia? Nemo, veniam? Aut
+voluptates consectetur eum molestiae deserunt doloremque?`,
+          readMore: "https://en.wikipedia.org/wiki/Spider-Man:_No_Way_Home",
+        },
+        {
+          name: "All Of Us Are Dead",
+          img: "https://kaiz.me/flexbox-product-grid/assets/all-of-us-are-dead.jpeg",
+          discription: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi
+earum voluptatem nesciunt ullam veniam molestiae? Necessitatibus
+consequuntur ipsam consectetur atque quia? Nemo, veniam? Aut
+voluptates consectetur eum molestiae deserunt doloremque?`,
+          readMore: "https://en.wikipedia.org/wiki/All_of_Us_Are_Dead",
+        },
+        {
+          name: "Shadow And Bone",
+          cato: "comedies,dramas",
+          img: "https://kaiz.me/flexbox-product-grid/assets/shadow-and-bone.jpg",
+          discription: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi
+earum voluptatem nesciunt ullam veniam molestiae? Necessitatibus
+consequuntur ipsam consectetur atque quia? Nemo, veniam? Aut
+voluptates consectetur eum molestiae deserunt doloremque?`,
+          readMore: "https://en.wikipedia.org/wiki/Shadow_and_Bone_(TV_series)",
+        },
+        {
+          name: "The Witcher",
+          img: "https://kaiz.me/flexbox-product-grid/assets/the-witcher.jpg",
+          discription: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi
+earum voluptatem nesciunt ullam veniam molestiae? Necessitatibus
+consequuntur ipsam consectetur atque quia? Nemo, veniam? Aut
+voluptates consectetur eum molestiae deserunt doloremque?`,
+          readMore: "https://en.wikipedia.org/wiki/The_Witcher_(TV_series)",
+        },
+      ];
+
+      const container = document.querySelector(".container");
+      for (let i = 0; i < movies.length; i++) {
+        const cardDiv = document.createElement("div");
+        cardDiv.classList.add("card");
+        cardDiv.innerHTML = `<img
+  src="${movies[i].img}"
+  alt=""
+/>
+<div class="info">
+  <h2>${movies[i].name}</h2>
+  <p>
+   ${movies[i].discription}
+  </p>
+  <a href="${movies[i].readMore}" target="_blank">Read more...</a>
+</div>`;
+        container.append(cardDiv);
+      }
+    </script>
+  </body>
+</html>
